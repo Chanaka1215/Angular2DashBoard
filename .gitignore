@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea
 node_modules
 jspm_packages
@@ -9,3 +10,7 @@ e2e/**/*.js
 e2e/**/*.js.map
 _test-output
 _temp
+=======
+
+/.idea
+>>>>>>> cd2f16d90bec65f725f6e1065f851cb9808c4e5b
