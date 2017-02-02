@@ -7,28 +7,22 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class ServicesFromBackendAPI{
+export class ServiceCalls{
   constructor(private  _http: Http){
     console.log('bus Api service started');
   }
 
 
-  postLoggingData(object : any){
+  postData(object:any,url:string){
     console.log('access postLoggingData...');
     var obj =JSON.stringify(object);
     var body = obj;
     var header = new Headers();
     header.append('Content-Type','application/json')
-    return this._http.post('http://localost:8000/post',body,{headers:header}).map(res => res.json());
+    return this._http.post(url,body,{headers:header}).map(res => res.json());
   }
 
-  postNewSponsor(object : any){
-  console.log('access postNewSponsor...');
-  var obj =JSON.stringify(object);
-  var body = obj;
-  var header = new Headers();
-  header.append('Content-Type','application/json')
-  return this._http.post('http://localost:8000/register',body,{headers:header}).map(res => res.json());
- }
-
+  getData(url:string){
+    return this._http.get(url).map(res => res.json());
+  }
 }

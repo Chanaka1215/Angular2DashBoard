@@ -1,27 +1,26 @@
 
-<div class="container" >
-  <div class="col-md-8 col-md-offset-2 logging well">
+  <div class="col-md-10 col-md-offset-1  well">
     <legend>Entor Correct Details</legend>
-    <form (ngSubmit)="onSubmit()" #sponsorSignInForm="ngForm" class=" form-signin">
+    <form (ngSubmit)="onSubmit()" #newSponsor ="ngForm" class=" form-signin">
       <div class="form-group">
-        <label for="comName">First Name</label>
-        <input type="text" class="form-control" id="comName" required [(ngModel)]="model.comName" name="comName" #comName="ngModel" >
+        <label for="comName">Comany Name</label>
+        <input type="text" class="form-control" id="comName" required [(ngModel)]="model.comName" name="comName" #comName="ngModel" placeholder="ABC company" >
         <div [hidden]="comName.valid || comName.pristine" class="alert alert-danger">
           Company Name is required.
         </div>
       </div>
 
       <div class="form-group">
-        <label for="disName">Last Name</label>
-        <input type="text" class="form-control" id="disName" required [(ngModel)]="model.disName" name="disName" #disName="ngModel" >
+        <label for="disName">Display Name</label>
+        <input type="text" class="form-control" id="disName" required [(ngModel)]="model.disName" name="disName" #disName="ngModel" placeholder="ABC Holdings">
         <div [hidden]="disName.valid || disName.pristine" class="alert alert-danger">
           Display Name is required.
         </div>
       </div>
 
       <div class="form-group">
-        <label for="password">First Name</label>
-        <input type="text" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel" >
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password">
         <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
           Password is required.
         </div>
@@ -29,7 +28,7 @@
 
       <div class="form-group">
         <label for="eMail">Email</label>
-        <input type="text" class="form-control" id="eMail" required [(ngModel)]="model.eMail" name="eMail" #eMail="ngModel" >
+        <input type="text" class="form-control" id="eMail" required [(ngModel)]="model.eMail" name="eMail" #eMail="ngModel" placeholder="something@gmail.com">
         <div [hidden]="eMail.valid || eMail.pristine" class="alert alert-danger">
           Email is required.
         </div>
@@ -37,7 +36,7 @@
 
       <div class="form-group">
         <label for="telNumber">Teliphone Number</label>
-        <input type="text" class="form-control" id="telNumber" required [(ngModel)]="model.telNumber" name="telNumber" #telNumber="ngModel" >
+        <input type="text" class="form-control" id="telNumber" required [(ngModel)]="model.telNumber" name="telNumber" #telNumber="ngModel" placeholder="+9411-1215145">
         <div [hidden]="telNumber.valid || telNumber.pristine" class="alert alert-danger">
           Teliphone Number is required.
         </div>
@@ -45,15 +44,15 @@
 
       <div class="form-group">
         <label for="faxNumber">Fax Number</label>
-        <input type="text" class="form-control" id="faxNumber" required [(ngModel)]="model.faxNumber" name="faxNumber" #faxNumber="ngModel" >
-          <div [hidden]="telNumber.valid || telNumber.pristine" class="alert alert-danger">
+        <input type="text" class="form-control"  id="faxNumber" required [(ngModel)]="model.faxNumber" name="faxNumber" #faxNumber="ngModel"  placeholder="011-6556565">
+          <div [hidden]="faxNumber.valid || faxNumber.pristine" class="alert alert-danger">
             Fax Number is required.
           </div>
       </div>
 
       <div class="form-group">
         <label for="state">Select State</label>
-        <select class="form-control" id="state" required [(ngModel)]="model.state" name="state" #state="ngModel" >
+        <select class="form-control" id="state"  required [(ngModel)]="model.state" name="state" #state="ngModel" placeholder="Select your city" >
           <option *ngFor="let state of states" [value]="state">{{state}}</option>
         </select>
         <div [hidden]="state.valid || state.pristine" class="alert alert-danger">
@@ -62,9 +61,17 @@
       </div>
 
       <div class="form-group">
-        <label for="zipCode">Fax Number</label>
-        <input type="text" class="form-control" id="zipCode" required [(ngModel)]="model.zipCode" name="zipCode" #zipCode="ngModel" >
+        <label for="zipCode">Zip Code</label>
+        <input type="text" class="form-control" id="zipCode" required [(ngModel)]="model.zipCode" name="zipCode" #zipCode="ngModel" placeholder="21300" >
         <div [hidden]="zipCode.valid || zipCode.pristine" class="alert alert-danger">
+          Zip Code is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="zipCode">Address</label>
+        <input type="text" class="form-control" id="address" required [(ngModel)]="model.address" name="address" #address="ngModel" placeholder="Enter Address">
+        <div [hidden]="address.valid || address.pristine" class="alert alert-danger">
           Zip Code is required.
         </div>
       </div>
@@ -76,6 +83,13 @@
           brief description is required is required.
         </div>
       </div>
+      <div>
+        <button (click)="sponsorSignInForm.reset()" type="submit" class="btn btn-lg btn-warning " >Reset</button>
+        <button type="submit" class="btn btn-lg btn-success" [disabled]="!newSponsor.form.valid">Submit</button>
+        <button type="submit" class="btn btn-lg btn-danger" routerLink="/" routerLinkActive="Active"> Back</button>
+      </div>
+   {{response}}
     </form>
   </div>
-</div>
+
+

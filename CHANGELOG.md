@@ -17,14 +17,14 @@ Upgraders: for a fresh start, consider running these commands
 
 <a name="0.2.19"></a>
 # 0.2.19 (2016-11-30)
-* remove upgrade mappings from `systemjs.config.js` PR #301
+* remove upgrade mappings from `systemjs.utills.js` PR #301
 
 <a name="0.2.18"></a>
 # 0.2.18 (2016-11-30)
 * remove `exclude` clause from `tsconfig.json`; it was just confusing people
 * karma.config + karma-test-shim can handle multiple spec source paths (issue #294)
 * cosmetic `app.component.spec.ts` changes
-* cosmetic `karma.config.js` changes
+* cosmetic `karma.utills.js` changes
 
 <a name="0.2.17"></a>
 # 0.2.17 (2016-11-16)
@@ -87,7 +87,7 @@ Upgraders: for a fresh start, consider running these commands
 * Angular 2 RC6 version
 * Updated new forms, router, angular2-in-memory-web-api, karma, core-js, rxjs and zone.js packages
 * Removed router-deprecated package
-* Updated karma.conf.js and systemjs.config.js
+* Updated karma.conf.js and systemjs.utills.js
 
 <a name="0.2.6"></a>
 # 0.2.6 (2016-08-09)

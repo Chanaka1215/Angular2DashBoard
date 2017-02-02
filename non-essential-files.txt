@@ -9,5 +9,5 @@ karma.conf.js
 karma-test-shim.js
 LICENSE
 non-essential-files.txt
-protractor.config.js
+protractor.utills.js
 README.md

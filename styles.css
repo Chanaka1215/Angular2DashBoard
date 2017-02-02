@@ -1,5 +1,96 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+.body{
+  background-color:#E7E7E7;
+}
+.sidebar{
+  background-color: #2a3f54;
+  padding-left: 0%;
+  margin-left: 0%;
+  padding-right: 0%;
+  margin-right: 0%;
+  height: 100%;
+}
+
+sidebar a{
+  color: white;
+}
+
+.navbar{
+  margin-bottom: 0%;
+}
+
+
+.profile-img{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.nav-sidebar{
+  color: aliceblue;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 5%;
+}
+
+.summary-block{
+  border: thick;
+  border-left-color: aliceblue;
+  border-right-color: aliceblue;
+  color: aqua;
+
+}
+
+.summary-block h1{
+  color: #73879C;
+  text-align: center;
+  font-weight: bolder;
+}
+.carouselImg{
+  margin-left: 0px;
+  margin-right: 0px;
+  height: 400px;
+  width: 100%;
+
+
+}
+.well{
+  border-radius: 0%;
+}
+
+.footer{
+  text-align: center;
+  font-size: larger;
+  background-color: black;
+  height: 10%;
+  color: white;
+}
+
+.logging{
+  margin-top: 10%;
+  z-index: 15;
+  box-shadow: grey;
+  border: #111518;
+}
+
+.BGcolor{
+  background-color: grey;
+}
+
+
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.rm-margin-and-padding{
+  margin: 0% 0% 0% 0%;
+  padding: 0% 0% 0% 0%;
 }
