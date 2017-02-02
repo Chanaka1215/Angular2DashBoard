@@ -1,0 +1,81 @@
+
+<div class="container" >
+  <div class="col-md-8 col-md-offset-2 logging well">
+    <legend>Entor Correct Details</legend>
+    <form (ngSubmit)="onSubmit()" #sponsorSignInForm="ngForm" class=" form-signin">
+      <div class="form-group">
+        <label for="comName">First Name</label>
+        <input type="text" class="form-control" id="comName" required [(ngModel)]="model.comName" name="comName" #comName="ngModel" >
+        <div [hidden]="comName.valid || comName.pristine" class="alert alert-danger">
+          Company Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="disName">Last Name</label>
+        <input type="text" class="form-control" id="disName" required [(ngModel)]="model.disName" name="disName" #disName="ngModel" >
+        <div [hidden]="disName.valid || disName.pristine" class="alert alert-danger">
+          Display Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">First Name</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel" >
+        <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="eMail">Email</label>
+        <input type="text" class="form-control" id="eMail" required [(ngModel)]="model.eMail" name="eMail" #eMail="ngModel" >
+        <div [hidden]="eMail.valid || eMail.pristine" class="alert alert-danger">
+          Email is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="telNumber">Teliphone Number</label>
+        <input type="text" class="form-control" id="telNumber" required [(ngModel)]="model.telNumber" name="telNumber" #telNumber="ngModel" >
+        <div [hidden]="telNumber.valid || telNumber.pristine" class="alert alert-danger">
+          Teliphone Number is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="faxNumber">Fax Number</label>
+        <input type="text" class="form-control" id="faxNumber" required [(ngModel)]="model.faxNumber" name="faxNumber" #faxNumber="ngModel" >
+          <div [hidden]="telNumber.valid || telNumber.pristine" class="alert alert-danger">
+            Fax Number is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="state">Select State</label>
+        <select class="form-control" id="state" required [(ngModel)]="model.state" name="state" #state="ngModel" >
+          <option *ngFor="let state of states" [value]="state">{{state}}</option>
+        </select>
+        <div [hidden]="state.valid || state.pristine" class="alert alert-danger">
+          State is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="zipCode">Fax Number</label>
+        <input type="text" class="form-control" id="zipCode" required [(ngModel)]="model.zipCode" name="zipCode" #zipCode="ngModel" >
+        <div [hidden]="zipCode.valid || zipCode.pristine" class="alert alert-danger">
+          Zip Code is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="disc">Brief Description</label>
+        <input type="text" class="form-control" id="disc" required [(ngModel)]="model.disc" name="disc" #disc="ngModel" >
+        <div [hidden]="disc.valid || disc.pristine" class="alert alert-danger">
+          brief description is required is required.
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

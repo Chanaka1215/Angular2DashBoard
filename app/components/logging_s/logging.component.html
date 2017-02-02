@@ -1,0 +1,30 @@
+
+<div class="container" >
+  <div class="col-md-4 col-md-offset-4 logging well">
+      <legend>Sign in.</legend>
+      <form (ngSubmit)="onSubmit()" #sponsorSignInForm="ngForm" class=" form-signin">
+          <div class="form-group">
+          <label for="userName">User Name</label>
+          <input type="text" class="form-control" id="userName" required [(ngModel)]="model.user_name" name="userName" #userName="ngModel" >
+          <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+            User Name is required.
+          </div>
+          </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel" >
+          <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+            password is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]= "!isValid()" >Sign in</button>
+        <span class="container">
+          <p style="display: inline"><a routerLink ='/register-s' routerLinkActive="Active"> Register now </a></p> <!--<p style="display: inline;"><a (click)="heroForm.reset()">Reset</a></p>-->
+        </span>
+
+      </form>
+
+  </div>
+  {{getResponse}}
+</div>
+
