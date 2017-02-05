@@ -1,463 +1,570 @@
 
- <div class="right_col" role="main">
-   <!-- top tiles -->
-   <div class="row tile_count">
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-       <div class="count">2500</div>
-       <span class="count_bottom"><i class="green">4% </i> From last Week</span>
-     </div>
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-clock-o"></i> Total Sponsors</span>
-       <div class="count">123.50</div>
-       <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-     </div>
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-user"></i>Total Adverteistment</span>
-       <div class="count green">2,500</div>
-       <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-     </div>
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-user"></i>Total Drivers</span>
-       <div class="count">4,567</div>
-       <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-     </div>
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-user"></i>Total Conductors</span>
-       <div class="count">2,315</div>
-       <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-     </div>
-     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-       <span class="count_top"><i class="fa fa-user"></i> Total Buses</span>
-       <div class="count">7,325</div>
-       <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-     </div>
-   </div>
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+  <!-- START PAGE SIDEBAR -->
+  <div class="page-sidebar">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+      <li class="xn-logo">
+        <a href="index.html">{{adminName}}</a>
+        <a href="#" class="x-navigation-control"></a>
+      </li>
+      <li class="xn-profile">
+        <a href="#" class="profile-mini">
+          <img src="{{adminPropic}}" alt="{{adminName}}"/>
+        </a>
+        <div class="profile">
+          <div class="profile-image">
+            <img src="{{adminPropic}}" alt="{{adminPropic}}"/>
+          </div>
+          <div class="profile-data">
+            <div class="profile-data-name">{{adminName}}</div>
+            <div class="profile-data-title">{{adminRole}}</div>
+          </div>
+          <div class="profile-controls">
+            <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
+            <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+          </div>
+        </div>
+      </li>
+      <li class="xn-title">Navigation</li>
+      <li [class.active]="dashboard.classList.contains('active')">
+        <a #dashboard routerLink="/dashboard" routerLinkActive="active" ><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+      </li>
+      <li [class.active]="newbus.classList.contains('active')">
+        <a #newbus routerLink="/new-bus" routerLinkActive="active" ><span class="fa fa-file-text-o"></span> <span class="xn-text">New Bus</span></a>
+      </li>
+      <li [class.active]="newdriver.classList.contains('active')">
+        <a #newdriver routerLink="/new-driver" routerLinkActive="active" ><span class="fa fa-file-text-o"></span> <span class="xn-text">New Driver</span></a>
+      </li>
+      <li [class.active]="newconductor.classList.contains('active')">
+        <a #newconductor routerLink="/new-conductor" routerLinkActive="active" ><span class="fa fa-file-text-o"></span> <span class="xn-text">New Conductor</span></a>
+      </li>
+      <li [class.active]="newtrain.classList.contains('active')">
+        <a #newtrain routerLink="/new-train" routerLinkActive="active" ><span class="fa fa-file-text-o"></span> <span class="xn-text">New Train</span></a>
+      </li>
+    </ul>
+    <!-- END X-NAVIGATION -->
+  </div>
+  <!-- END PAGE SIDEBAR -->
+
+  <!-- PAGE CONTENT -->
+  <div class="page-content">
+
+    <!-- START X-NAVIGATION VERTICAL -->
+    <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+      <!-- TOGGLE NAVIGATION -->
+      <li class="xn-icon-button">
+        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+      </li>
+      <!-- END TOGGLE NAVIGATION -->
+      <!-- SEARCH -->
+      <li class="xn-search">
+        <form role="form">
+          <input type="text" name="search" placeholder="Search..."/>
+        </form>
+      </li>
+      <!-- END SEARCH -->
+      <!-- SIGN OUT -->
+      <li class="xn-icon-button pull-right">
+        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+      </li>
+      <!-- END SIGN OUT -->
+      <!-- MESSAGES -->
+      <li class="xn-icon-button pull-right">
+        <a href="#"><span class="fa fa-comments"></span></a>
+        <div class="informer informer-danger">4</div>
+        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+            <div class="pull-right">
+              <span class="label label-danger">4 new</span>
+            </div>
+          </div>
+          <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+            <a href="#" class="list-group-item">
+              <div class="list-group-status status-online"></div>
+              <img src="assets/images/users/user2.jpg" class="pull-left" alt="John Doe"/>
+              <span class="contacts-title">John Doe</span>
+              <p>Praesent placerat tellus id augue condimentum</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <div class="list-group-status status-away"></div>
+              <img src="assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk"/>
+              <span class="contacts-title">Dmitry Ivaniuk</span>
+              <p>Donec risus sapien, sagittis et magna quis</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <div class="list-group-status status-away"></div>
+              <img src="assets/images/users/user3.jpg" class="pull-left" alt="Nadia Ali"/>
+              <span class="contacts-title">Nadia Ali</span>
+              <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <div class="list-group-status status-offline"></div>
+              <img src="assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader"/>
+              <span class="contacts-title">Darth Vader</span>
+              <p>I want my money back!</p>
+            </a>
+          </div>
+          <div class="panel-footer text-center">
+            <a href="pages-messages.html">Show all messages</a>
+          </div>
+        </div>
+      </li>
+      <!-- END MESSAGES -->
+      <!-- TASKS -->
+      <li class="xn-icon-button pull-right">
+        <a href="#"><span class="fa fa-tasks"></span></a>
+        <div class="informer informer-warning">3</div>
+        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>
+            <div class="pull-right">
+              <span class="label label-warning">3 active</span>
+            </div>
+          </div>
+          <div class="panel-body list-group scroll" style="height: 200px;">
+            <a class="list-group-item" href="#">
+              <strong>Phasellus augue arcu, elementum</strong>
+              <div class="progress progress-small progress-striped active">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+              </div>
+              <small class="text-muted">John Doe, 25 Sep 2014 / 50%</small>
+            </a>
+            <a class="list-group-item" href="#">
+              <strong>Aenean ac cursus</strong>
+              <div class="progress progress-small progress-striped active">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">80%</div>
+              </div>
+              <small class="text-muted">Dmitry Ivaniuk, 24 Sep 2014 / 80%</small>
+            </a>
+            <a class="list-group-item" href="#">
+              <strong>Lorem ipsum dolor</strong>
+              <div class="progress progress-small progress-striped active">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+              </div>
+              <small class="text-muted">John Doe, 23 Sep 2014 / 95%</small>
+            </a>
+            <a class="list-group-item" href="#">
+              <strong>Cras suscipit ac quam at tincidunt.</strong>
+              <div class="progress progress-small">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+              </div>
+              <small class="text-muted">John Doe, 21 Sep 2014 /</small><small class="text-success"> Done</small>
+            </a>
+          </div>
+          <div class="panel-footer text-center">
+            <a href="pages-tasks.html">Show all tasks</a>
+          </div>
+        </div>
+      </li>
+      <!-- END TASKS -->
+    </ul>
+    <!-- END X-NAVIGATION VERTICAL -->
 
 
 
- <div class="dashboard_graph">
 
-   <div class="row x_title">
-     <div class="col-md-6">
-       <h3>Network Activities <small>Graph title sub-title</small></h3>
-     </div>
-     <div class="col-md-6">
-       <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-         <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-       </div>
-     </div>
-   </div>
-   <div class="row">
-       <div class="col-md-9 bg-white dashboard_graph">
-         <line-chart></line-chart>
-       </div>
+    <!--Stert Overview component-->
+    <!-- This part should be override vith router outlet after imoplementing multiple routes -->
+    <div class="page-content-wrap">
 
-       <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-         <div class="x_title">
-           <h2>Top Campaign Performance</h2>
-           <div class="clearfix"></div>
-         </div>
+      <!-- Start Counting section-->
+      <br>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalUsers}}</div>
+            <div class="widget-title">TOTAL USERS</div>
+            <div class="widget-subtitle">has been registered</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalSponsors}}</div>
+            <div class="widget-title">TOTAL SPONSORS</div>
+            <div class="widget-subtitle">has registerd</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalAdds}}</div>
+            <div class="widget-title">TOTAL ADVERTIESTMENT</div>
+            <div class="widget-subtitle">have been added</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalDrivers}}</div>
+            <div class="widget-title">TOTAL DRIVES</div>
+            <div class="widget-subtitle">have been registered</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalConductors}}</div>
+            <div class="widget-title">TOTAL CONDUCTORS</div>
+            <div class="widget-subtitle">have been registered</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-default widget-item-icon ">
+            <div class="widget-int num-count green">{{dataObject.totalBusses}}</div>
+            <div class="widget-title">TOTAL BUSSES</div>
+            <div class="widget-subtitle">have been registered</div>
+          </div>
+        </div>
 
-         <div class="col-md-12 col-sm-12 col-xs-6">
-           <div>
-             <p>Facebook Campaign</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
-               </div>
-             </div>
-           </div>
-           <div>
-             <p>Twitter Campaign</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-               </div>
-             </div>
-           </div>
-         </div>
-         <div class="col-md-12 col-sm-12 col-xs-6">
-           <div>
-             <p>Conventional Media</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
-               </div>
-             </div>
-           </div>
-           <div>
-             <p>Bill boards</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-               </div>
-             </div>
-           </div>
-           <div>
-             <p>Bill boards</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-               </div>
-             </div>
-           </div>
-           <div>
-             <p>Bill boards</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-               </div>
-             </div>
-           </div>
-           <div>
-             <p>Bill boards</p>
-             <div class="">
-               <div class="progress progress_sm" style="width: 76%;">
-                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-               </div>
-             </div>
-           </div>
-         </div>
+      </div>
+      <!-- End Counting section -->
 
-       </div>
+      <!-- Title of the overview -->
+      <div class="row" style="min-height: 50px;background-color: #fff;">
+        <div style="margin-top: 8px">
+          <div class="col-md-6">
+            <h2>Summary of The Network Activities <!--<small>Graph title sub-title</small>--></h2>
+          </div>
+          <div class="col-md-6">
+            <div id="reportrange" class="pull-right"
+                 style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+              <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+              <span>{{dataObject.time}}</span> <b class="caret"></b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end Title of the overview -->
 
 
- </div>
+      <div class="row">
 
+        <div class="col-md-8">
+
+          <!-- START Summary graph BLOCK -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title-box">
+                <h3>Visitors</h3>
+                <span>Visitors (last month)</span>
+              </div>
+              <ul class="panel-controls" style="margin-top: 2px;">
+                <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body padding-0">
+              <div class="chart-holder" style="height: 400px">
+                <line-chart></line-chart>
+              </div>
+            </div>
+          </div>
+          <!-- END summary graph BLOCK -->
+        </div>
+
+        <div class="col-md-4">
+
+          <!-- START top sponsor block -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title-box">
+                <h3>Top SPONSORS</h3>
+              </div>
+              <ul class="panel-controls" style="margin-top: 2px;">
+                <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body panel-body-table">
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="60%">Sponsor</th>
+                    <th width="40%">Advertisement</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><h3>{{dataObject.topCom1}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom1Point}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom2}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom2Point}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom3}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom3Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom4}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom4Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom5}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom5Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom6}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom6Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom7}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom7Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topCom8}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topCom8Point}}</h3></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!--======================-->
+      </div>
+
+
+      <!-- finsh the first row-->
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title-box">
+                <h3>Top USERS</h3>
+              </div>
+              <ul class="panel-controls" style="margin-top: 2px;">
+                <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body panel-body-table">
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="60%">User</th>
+                    <th width="40%">Points</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><h3>{{dataObject.topUser1}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topUser1Point}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topUser2}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topUser2Point}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topUser3}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topUser3Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topUser4}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topUser4Point}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topUser5}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topUser5Point}}</h3></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title-box">
+                <h3>Top BUSES</h3>
+              </div>
+              <ul class="panel-controls" style="margin-top: 2px;">
+                <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body panel-body-table">
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="60%">Plate No</th>
+                    <th width="40%">Points</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><h3>{{dataObject.topBusId1}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topBusId1Points}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topBusId2}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topBusId2Points}}</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topBusId3}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topBusId3Points}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topBusId4}}</h3></td>
+                    <td><h3 class="purple"></h3>{{dataObject.topBusId4Points}}</td>
+                  </tr>
+                  <tr>
+                    <td><h3>{{dataObject.topBusId5}}</h3></td>
+                    <td><h3 class="purple">{{dataObject.topBusId5Points}}</h3></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title-box">
+                <h3>TOP DRIVERS</h3>
+              </div>
+              <ul class="panel-controls" style="margin-top: 2px;">
+                <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body panel-body-table">
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="60%">Driver NTC</th>
+                    <th width="40%">Points</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><h3>Joli Admin</h3></td>
+                    <td><h3 class="purple">510</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>Gemini</h3></td>
+                    <td><h3 class="purple">510</h3></td>
+
+                  </tr>
+                  <tr>
+                    <td><h3>Taurus</h3></td>
+                    <td><h3 class="purple">510</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>Leo</h3></td>
+                    <td><h3 class="purple">510</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>Virgo</h3></td>
+                    <td><h3 class="purple">510</h3></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+
+
+  </div>
+  <!-- END PAGE CONTENT -->
 </div>
- </div>
+<!-- END PAGE CONTAINER -->
 
-<br>
- <div class="row">
-   <div class="col-md-4 col-sm-4 col-xs-12">
-     <div class="x_panel tile fixed_height_320">
-       <div class="x_title">
-         <h2>App Versions</h2>
-         <ul class="nav navbar-right panel_toolbox">
-           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-           </li>
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-             <ul class="dropdown-menu" role="menu">
-               <li><a href="#">Settings 1</a>
-               </li>
-               <li><a href="#">Settings 2</a>
-               </li>
-             </ul>
-           </li>
-           <li><a class="close-link"><i class="fa fa-close"></i></a>
-           </li>
-         </ul>
-         <div class="clearfix"></div>
-       </div>
-       <div class="x_content">
-         <h4>App Usage across versions</h4>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.2</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>123k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.3</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>53k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.4</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>23k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.5</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>3k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.6</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>1k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-       </div>
-     </div>
-   </div>
-   <!--==============================================-->
-   <div class="col-md-4 col-sm-4 col-xs-12">
-     <div class="x_panel tile fixed_height_320">
-       <div class="x_title">
-         <h2>App Versions</h2>
-         <ul class="nav navbar-right panel_toolbox">
-           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-           </li>
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-             <ul class="dropdown-menu" role="menu">
-               <li><a href="#">Settings 1</a>
-               </li>
-               <li><a href="#">Settings 2</a>
-               </li>
-             </ul>
-           </li>
-           <li><a class="close-link"><i class="fa fa-close"></i></a>
-           </li>
-         </ul>
-         <div class="clearfix"></div>
-       </div>
-       <div class="x_content">
-         <h4>App Usage across versions</h4>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.2</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>123k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.3</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>53k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.4</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>23k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.5</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>3k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.6</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>1k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-       </div>
-     </div>
-   </div>
-   <!--==============================================-->
-   <div class="col-md-4 col-sm-4 col-xs-12">
-     <div class="x_panel tile fixed_height_320">
-       <div class="x_title">
-         <h2>App Versions</h2>
-         <ul class="nav navbar-right panel_toolbox">
-           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-           </li>
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-             <ul class="dropdown-menu" role="menu">
-               <li><a href="#">Settings 1</a>
-               </li>
-               <li><a href="#">Settings 2</a>
-               </li>
-             </ul>
-           </li>
-           <li><a class="close-link"><i class="fa fa-close"></i></a>
-           </li>
-         </ul>
-         <div class="clearfix"></div>
-       </div>
-       <div class="x_content">
-         <h4>App Usage across versions</h4>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.2</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>123k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.3</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>53k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.4</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>23k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.5</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>3k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-         <div class="widget_summary">
-           <div class="w_left w_25">
-             <span>0.1.5.6</span>
-           </div>
-           <div class="w_center w_55">
-             <div class="progress">
-               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-                 <span class="sr-only">60% Complete</span>
-               </div>
-             </div>
-           </div>
-           <div class="w_right w_20">
-             <span>1k</span>
-           </div>
-           <div class="clearfix"></div>
-         </div>
-
-       </div>
-     </div>
-   </div>
- </div>
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+  <div class="mb-container">
+    <div class="mb-middle">
+      <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+      <div class="mb-content">
+        <p>Are you sure you want to log out?</p>
+        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+      </div>
+      <div class="mb-footer">
+        <div class="pull-right">
+          <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+          <button class="btn btn-default btn-lg mb-control-close">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MESSAGE BOX-->
 
 
 

@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
 @Component({
   moduleId : module.id,
   selector: 'carousel',
-  templateUrl:'carousel.component.html'
+  templateUrl:'carousel.component.html',
+  styleUrls: ['carousel.css']
 })
 export class CarouselComponent  {
   private img1URL : String;

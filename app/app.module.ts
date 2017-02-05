@@ -15,11 +15,13 @@ import {SponsorRegisterComponent} from "./components/forms/sponsorRegister.compo
 import {WebRouting} from "./app.routing";
 
 import { ServiceCalls} from "./services/serviceCalls.service";
-import {DashBoardComponent} from "./components/dashBoard/dashboard.component";
-import {NavbarComponent} from "./components/dashBoard/navbar/navbar.component";
-import {SidebarComponent} from "./components/dashBoard/sidebar/sidebar.component";
 import {OverViewComponent} from "./components/dashBoard/overview/overview.component";
 import {LineChartComponent} from "./components/dashBoard/lineChart/lineChart.component";
+import {BusFormComponent} from "./components/dashBoard/busForm/busForm.component";
+import {newDriverComponent} from "./components/dashBoard/driverForm/newDriver.component";
+import {newConductorComponent} from "./components/dashBoard/conductor/newConductor.component";
+import {newTrainComponent} from "./components/dashBoard/newTrain/newTrain.component";
+
 
 
 
@@ -29,11 +31,12 @@ import {LineChartComponent} from "./components/dashBoard/lineChart/lineChart.com
                    CarouselComponent,
                    LoggingComponent,
                    SponsorRegisterComponent,
-                   DashBoardComponent,
-                   NavbarComponent,
-                   SidebarComponent,
                    OverViewComponent,
-                   LineChartComponent
+                   LineChartComponent,
+                   BusFormComponent,
+                   newDriverComponent,
+                    newConductorComponent,
+                    newTrainComponent
   ],
 
 

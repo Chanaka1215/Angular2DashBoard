@@ -9,7 +9,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {CarouselComponent} from "./components/carousel/carousel.component";
 import {LoggingComponent} from "./components/logging_s/logging.component";
 import {SponsorRegisterComponent} from "./components/forms/sponsorRegister.component";
-import {DashBoardComponent} from "./components/dashBoard/dashboard.component";
+import {OverViewComponent} from "./components/dashBoard/overview/overview.component";
+import {BusFormComponent} from "./components/dashBoard/busForm/busForm.component";
+import {newDriverComponent} from "./components/dashBoard/driverForm/newDriver.component";
+import {newConductorComponent} from "./components/dashBoard/conductor/newConductor.component";
+import {newTrainComponent} from "./components/dashBoard/newTrain/newTrain.component";
 
 // Route Configuration
 const appRoutes: Routes = [
@@ -27,7 +31,23 @@ const appRoutes: Routes = [
   },
   {
     path : 'dashboard',
-    component : DashBoardComponent
+    component : OverViewComponent
+  },
+  {
+    path: 'new-bus',
+    component : BusFormComponent
+  },
+  {
+    path:'new-driver',
+    component:  newDriverComponent
+  },
+  {
+    path :'new-conductor',
+    component: newConductorComponent
+  },
+  {
+    path : 'new-train',
+    component:newTrainComponent
   }
 
 ];

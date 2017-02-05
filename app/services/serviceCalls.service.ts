@@ -23,6 +23,7 @@ export class ServiceCalls{
   }
 
   getData(url:string){
+    console.log("get request done");
     return this._http.get(url).map(res => res.json());
   }
 }
