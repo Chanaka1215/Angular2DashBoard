@@ -30,13 +30,15 @@ export class OverViewComponent{
  }
 
   onInit(){
-    var url ='http://localhost:8000/overview';
+    var url ='http://localhost:3000/get/summary';
     this._serviceCalls.getData(url)
       .subscribe(
-        data => this.dataObject = data,
+        data => {this.dataObject = data;
+                console.log(JSON.parse(JSON.stringify(data)));
+                console.log(data.Conduc[0].NTC)},
         error => alert(error),
-        () => {console.log('data retreving part successfilly compleated'),
-                console.log(this.dataObject)}
+        () => console.log('data retreving part successfilly compleated'),
+
       );
   }
 
